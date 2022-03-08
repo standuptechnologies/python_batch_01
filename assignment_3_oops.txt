@@ -1,0 +1,95 @@
+Q. what is closures?
+Q. What is new method?
+
+Q. Singlton class?
+
+Q. How can we call Second level method using Super keyword?
+
+Q. How to write a generator through class?
+
+Q. How and when are we going to .pyc files?
+
+Q. Class, Method , Self and Init
+
+Q. inheritence concepts?
+
+Q. Poly Morphism?
+
+Q. Can We write n- number of init methods inside a class?
+
+Q. Method resolution order?
+
+Q. How to call Override method in Base class?
+
+Q. Dundler methods?.
+
+Q. Abstracion.
+
+Q. Aggregation and Composition.
+
+Q. What is Object() method?
+
+Q. Write a Python program to create a Vehicle class with max_speed and mileage instance attributes.
+
+Q. Create a Vehicle class without any variables and methods
+
+Q. Create a child class Bus that will inherit all of the variables and methods of the Vehicle class
+
+Q. Define a property that must have the same value for every class instance (object)
+
+Q. Create a Bus child class that inherits from the Vehicle class. The default fare charge of any vehicle is seating capacity * 100. If Vehicle is Bus instance, we need to add an extra 10% on full fare as a maintenance charge. So total fare for bus instance will become the final amount = total fare + 10% of the total fare.
+
+Q. Write a program to determine which class a given Bus object belongs to.
+
+
+===============================================================================================
+#  A mapping of digit to letters is given below: 
+#  2 -> A,B,C 
+# 3 -> D,E,F 
+# 4 -> G,H,I 
+# 5 -> J,K,L 
+# 6 -> M,N,O 
+# 7 -> P,Q,R,S 
+# 8 -> T,U,V 
+# 9 -> W,X,Y,Z 
+
+#  e.g., 
+
+# "2" -> ['A', 'B','C', 'AB', 'AC', 'BC', 'ABC'] 
+# "23" -> ['AD', 'AE', 'AF','BD', 'BE', 'BF','CD', 'CE', 'CF']
+===============================================================================================
+
+===============================================================================================
+
+# # Given two sorted lists A and B, write a function that returns a single sorted list that contains all elements from both A and B. 
+# # You cannot use any libraries or sort methods.
+
+===============================================================================================
+Here is your problem!
+
+Given two lists of time intervals, find the intersection of these two lists. Each list consists of disjoint intervals sorted based on their start time. Please submit your approaches and code to me. :)
+
+
+
+Example 1:
+
+Each tuple is a time interval [t1, t2] where t1 is the start time and t2 is the end time.
+
+Input: arr1=[[1, 3], [5, 6], [7, 9]], arr2=[[2, 3], [5, 7]]
+
+Output: [2, 3], [5, 6], [7, 7]
+
+Explanation: The output list contains the common intervals between the two lists.
+
+
+
+Example 2:
+
+Input: arr1=[[1, 3], [5, 7], [9, 12]], arr2=[[5, 10]]
+
+Output: [5, 7], [9, 10]
+
+Explanation: The output list contains the common intervals between the two lists.
+
+
+==========================================================================================
