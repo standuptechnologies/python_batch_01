@@ -1,11 +1,62 @@
 Q. Create a range of list which is having even numbers upto 100?
+Ans:
+start, end = 1, 100
+# iteration
+for num in range(start, end + 1):
+   # check
+    if num % 2 == 0:
+        print(num, end=" ")
+        
 Q. Create a range of list which is having odd numbers upto 100?
+Ans:
+start, end = 1, 100
+# iteration
+for num in range(start, end + 1):
+   # check
+   if num % 2 != 0:
+      print(num, end = " ")
+      
 Q. Create a range of list which is having multiples of 7 upto 100?
 Q. a =10, b =20 -- Swap two numbers.
+Ans:
+a = 10
+b = 20
+print("before swapping\na=", a, " b=", b)
+temp = a
+a = b
+b = temp
+print("\nafter swapping\na=", a, " b=", b)
+
+Output:before swapping
+a= 10  b= 20
+
+after swapping
+a= 20  b= 10
+
 Q. example given the string "Welcome to the danger zone" should become "zone danger the to Welcome" and not "enoz regnad eht ot emocleW"? 
+Ans:
+def rev_sentence(sentence):
+    words = sentence.split(' ')
+    reverse_sentence = ' '.join(reversed(words))
+    return reverse_sentence
+if __name__ == "__main__":
+    input = 'Welcome to the danger zone'
+    print(rev_sentence(input))
+
+
 Q. You are given a string input, let's say "Hello World!". Your output should be, how many times each character is showing up in the string. So, in this example, it should write:
 	H: 1 e: 1 l: 3 o: 2
-	
+Ans:
+test_str = "HelloWorld!"
+all_freq = {}
+
+for i in test_str:
+	if i in all_freq:
+		all_freq[i] += 1
+	else:
+		all_freq[i] = 1
+print ( str(all_freq))
+
 Q. 
 zenPython = '''
 
@@ -54,6 +105,14 @@ Namespaces are one honking great idea -- let's do more of those!
 '''
 
  Q1. find the count of number of words?
+ Ans:
+ file = open('file.txt', 'r')
+read_data = file.read()
+per_word = read_data.split()
+print('Total Words:', len(per_word))
+
+Output:Total Words: 147
+
  Q2. remove the characters in the words like *, \n, !, - ..etc and find then find the count of words?
  Q3. Convert all words into lower words?
  Q4. generate a dict with word as name and count of that as value?
@@ -63,7 +122,13 @@ Namespaces are one honking great idea -- let's do more of those!
 	# input:  is_valid_number
 	# output: isValidNumber 
 	vice versa.
-	
+    
+	 Ans:
+     old_str = 'is_valid_number'
+temp = old_str.split('_')
+res = temp[0] + ''.join(ele.title() for ele in temp[1:])
+print( str(res))
+
 Q. lst = [34,56,34,78,56,23,45,23]
 	checkIfDuplicates(lst) --- >write a function to find the duplicate elements.
 	
@@ -76,6 +141,14 @@ Q. """ Q. ABCDE --- Move 2 positions cyclic (Use Mod to length of string if Cycl
 	
 Q. #lst = ['abt','bta','tab','bar','dsksllkd']
 # all words which is having same characters group into one list and written --here we can say "abt" is same as "bta"?
+Ans:
+import itertools
+strings =  ['abt','bta','tab','bar','dsksllkd','tba']
+result = []
+iterator = itertools.groupby(strings, lambda string: string.split('-')[0])
+for element, group in iterator:
+   result.append(list(group))
+print(result)
 
 Q. print below patterns?
 	#Print the below pattern
@@ -114,11 +187,69 @@ Q. print below patterns?
 	
 	
 Q. Reverse the integer using str and also by mathematical operations by using remainder and dividend values? 3425 --- 5243
+Ans:
+number = int(input("Enter the reverse number: "))
+revs_number = 0
+while (number > 0):
+    remainder = number % 10
+    revs_number = (revs_number * 10) + remainder
+    number = number // 10
+print("The reverse number is : {}".format(revs_number))
+
 Q. Find an element from a string?
 Q. find program to find the nth prime number?
+Ans:n = int(input('Enter : '))
+prime_numbers = [2,3]
+i=3
+if(0<n<3):
+    print(n,'th Prime Number is :',prime_numbers[n-1])
+elif(n>2):
+    while (True):
+        i+=1
+        status = True
+        for j in range(2,int(i/2)+1):
+            if(i%j==0):
+                status = False
+                break
+        if(status==True):
+            prime_numbers.append(i)
+        if(len(prime_numbers)==n):
+            break
+    print(n,'th Prime Number is :', prime_numbers[n-1])
+else:
+    print('Please Enter A Valid Number')
 Q. swap all zeroes to end?
 	lst = [1,0,1,0,0,1,1,0]
+    
+    Ans:def moveZerosToEnd(arr, n):
+    count = 0;
+    for i in range(0, n):
+        if (arr[i] != 0):
+            arr[count] = arr[i]
+            count += 1
+    for i in range(count, n):
+        arr[i] = 0
+def printArray(arr, n):
+    for i in range(0, n):
+        print(arr[i], end=" ")
+
+arr =  [1,0,1,0,0,1,1,0]
+n = len(arr)
+
+print("Original array:", end=" ")
+printArray(arr, n)
+
+moveZerosToEnd(arr, n)
+
+print("\nModified array: ", end=" ")
+printArray(arr, n)
+
+    
 Q. Sort a list [34,67,87,23,12,4,89]
+Ans:
+numbers = [34,67,87,23,12,4,89]
+numbers.sort()
+print(numbers)
 Q. factorial of a number?
 Q. 
 

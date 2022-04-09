@@ -1,45 +1,210 @@
 Q. what is closures?
+
+Ans:  A Closure is a function object that remembers values in enclosing scopes even if they are not present in memory.
+
 Q. What is new method?
+
+Ans:The __new__ method is defined as a static method which requires to pass a parameter cls. 
 
 Q. Singlton class?
 
+Ans:A Singleton pattern in python is a design pattern that allows you to create just one instance of a class, throughout the lifetime of a program.
+
 Q. How can we call Second level method using Super keyword?
+Ans:class Animals:
+    
+    def __init__(self):
+        self.legs = 4
+        self.domestic = True
+        self.tail = True
+        self.mammals = True
+     
+    def isMammal(self):
+        if self.mammals:
+            print("It is a mammal.")
+     
+    def isDomestic(self):
+        if self.domestic:
+            print("It is a domestic animal.")
+     
+class Dogs(Animals):
+    def __init__(self):
+        super().__init__()
+ 
+    def isMammal(self):
+        super().isMammal()
+ 
+class Horses(Animals):
+    def __init__(self):
+        super().__init__()
+ 
+    def hasTailandLegs(self):
+        if self.tail and self.legs == 4:
+            print("Has legs and tail")
+ 
+# Driver code
+Tom = Dogs()
+Tom.isMammal()
+Bruno = Horses()
+Bruno.hasTailandLegs()
 
 Q. How to write a generator through class?
+Ans: 
+def my_gen():
+    n = 1
+    print('This is printed first')
+    # Generator function contains yield statements
+    yield n
+
+    n += 1
+    print('This is printed second')
+    yield n
+
+    n += 1
+    print('This is printed at last')
+    yield n
+# Using for loop
+for item in my_gen():
+    print(item)
 
 Q. How and when are we going to .pyc files?
 
+Ans:pyc files are created by the Python interpreter when a . py file is imported.
+
 Q. Class, Method , Self and Init
+Class: Class is a set or category of things having some property or attribute in common and differentiated from others by kind, type, or quality.
+Method:A Python method is a label that you can call on an object; it is a piece of code to execute on that object.
+self:self represents the instance of the class. By using the "self" keyword we can access the attributes and methods of the class in python.
+Init:"__init__" is a reseved method in python classes. It is known as a constructor in object oriented concepts.
 
 Q. inheritence concepts?
 
+Ans:Inheritance allows us to define a class that inherits all the methods and properties from another class.
+
 Q. Poly Morphism?
+Ans: Polymorphism means multiple forms.
+     polymorphism  defines methods in the child class that have the same name as the methods in the parent class.
 
 Q. Can We write n- number of init methods inside a class?
 
 Q. Method resolution order?
 
+Ans:Method resolution order describes the search path of the class which Python uses to get the appropriate method in classes that contain the multi-inheritance.
+
 Q. How to call Override method in Base class?
+Ans:
+class Animal:
+    def sound(self):
+        print('Animal makes sound.')
+
+class Dog(Animal):
+    def sound(self):
+        print('Dog barks.')
+d = Dog()
+d.sound()
 
 Q. Dundler methods?.
 
-Q. Abstracion.
+Ans: Dunder methods in Python are the methods having two prefix and suffix underscores in the method name.
+
+Q. Abstracion
+Ans:Abstraction is the process of hiding the real implementation of an application from the user and emphasizing only on how to use the         application.
 
 Q. Aggregation and Composition.
 
+Aggregation: Aggregation is a form of composition where objects are loosely coupled
+Composition:In composition one class acts as a container of the other class (contents).
+
+
 Q. What is Object() method?
 
+Ans:Python object() function returns the empty object, and the Python object takes no parameters.
+
 Q. Write a Python program to create a Vehicle class with max_speed and mileage instance attributes.
+Ans:
+class Vehicle:
+    def __init__(self, max_speed, mileage):
+        self.max_speed = max_speed
+        self.mileage = mileage
+
+modelX = Vehicle(240, 18)
+print(modelX.max_speed, modelX.mileage)
 
 Q. Create a Vehicle class without any variables and methods
+Ans:
+class Vehicle:
+    pass
 
 Q. Create a child class Bus that will inherit all of the variables and methods of the Vehicle class
+Ans:class Vehicle:
+
+    def __init__(self, name, max_speed, mileage):
+        self.name = name
+        self.max_speed = max_speed
+        self.mileage = mileage
+
+class Bus(Vehicle):
+    pass
+
+School_bus = Bus("School Volvo", 180, 12)
+print("Vehicle Name:", School_bus.name, "Speed:", School_bus.max_speed, "Mileage:", School_bus.mileage)
 
 Q. Define a property that must have the same value for every class instance (object)
+Ans:class Vehicle:
+    # Class attribute
+    color = "White"
+
+    def __init__(self, name, max_speed, mileage):
+        self.name = name
+        self.max_speed = max_speed
+        self.mileage = mileage
+
+class Bus(Vehicle):
+    pass
+
+class Car(Vehicle):
+    pass
+
+School_bus = Bus("School Volvo", 180, 12)
+print(School_bus.color, School_bus.name, "Speed:", School_bus.max_speed, "Mileage:", School_bus.mileage)
+
+car = Car("Audi Q5", 240, 18)
+print(car.color, car.name, "Speed:", car.max_speed, "Mileage:", car.mileage)
 
 Q. Create a Bus child class that inherits from the Vehicle class. The default fare charge of any vehicle is seating capacity * 100. If Vehicle is Bus instance, we need to add an extra 10% on full fare as a maintenance charge. So total fare for bus instance will become the final amount = total fare + 10% of the total fare.
+Ans:class Vehicle:
+    def __init__(self, name, mileage, capacity):
+        self.name = name
+        self.mileage = mileage
+        self.capacity = capacity
 
+    def fare(self):
+        return self.capacity * 100
+
+class Bus(Vehicle):
+    
+    def fare(self):
+        fare_car = self.capacity * 100 
+        total_fare = fare_car + (0.1 *fare_car)
+        return total_fare
+
+School_bus = Bus("School Volvo", 12, 50)
+print("Total Bus fare is:", School_bus.fare())
+
+Total Bus fare is: 5500.0
 Q. Write a program to determine which class a given Bus object belongs to.
+Ans:
+class Vehicle:
+    def __init__(self, name, mileage, capacity):
+        self.name = name
+        self.mileage = mileage
+        self.capacity = capacity
+
+class Bus(Vehicle):
+    pass
+
+School_bus = Bus("School Volvo", 12, 50)
+print(type(School_bus))
 
 
 ===============================================================================================
