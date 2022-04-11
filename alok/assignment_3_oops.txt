@@ -1,0 +1,163 @@
+Q. what is closures?
+ans-The way by which some data gets attached to the code is known as closures.
+
+Q. What is new method?
+ans-new method was known as the collection of several lines of codes which one is going to execute whenever it will call
+
+Q. Singlton class?
+ans-The class which contains only one object is known as singleton class.
+
+Q. How can we call Second level method using Super keyword?
+ans-By using super keyword we can invoke immediate parent class method
+
+Q. How to write a generator through class?
+ans-To write the generator function through a class we need to use yeild keyword.
+
+Q. How and when are we going to .pyc files?
+ans-when we are importing one .py file at that time the interpreter will create a .pyc file which contain the compiled bytecode.
+
+Q. Class, Method , Self and Init
+ans-CLASS:-class is known as the container in which we can define any number of objects,methods,functions etc.
+Method:-method is known as the collection of several function 
+self:- By using the self keyword we can access the attributes and methods of the class in python
+Init:-It is called whenever one object created from a class.
+
+Q. inheritence concepts?
+ans-creating a new class from bowring the properties from another class is known as inheritance.the new class is known as child class and old class is known as parent class.
+
+Q. Poly Morphism?
+ans-Polymorphism  defines methods in the child class that have the same name as the methods in the parent class.
+
+Q. Can We write n- number of init methods inside a class?
+ans-yes
+
+Q. Method resolution order?
+ans-It is the order in which methods are searched for execution in a class hiarchy.
+
+Q. How to call Override method in Base class?
+ans-by super keyword
+
+Q. Dundler methods?.
+ans-these are the methods having two prefix and suffix underscores in the method name
+
+Q. Abstracion.
+ans-Abstraction is known as the hiarchy of hiding irrelevant data from the user.
+
+Q. Aggregation and Composition.
+ans-Composition and aggregation are specialised form of Association
+
+Q. What is Object() method?
+ans-It returns an empty function.we can not add new method or objects to it
+
+Q. Write a Python program to create a Vehicle class with max_speed and mileage instance attributes.
+ans-
+class Vehicle:
+    def __init__(self, speed, mileage):
+        self.speed = speed
+        self.mileage = mileage
+modelX = Vehicle(240, 18)
+print(modelX.speed)
+print(modelX.mileage)
+
+Q. Create a Vehicle class without any variables and methods
+ans-
+class Vehicle:
+ pass
+
+Q. Create a child class Bus that will inherit all of the variables and methods of the Vehicle class
+ans-
+class Vehicle:
+    def __init__(self, name,speed, mileage):
+        self.name = name
+        self.speed = speed
+        self.mileage = mileage
+
+Q. Define a property that must have the same value for every class instance (object)
+ans-
+class Vehicle:
+    def __init__(self, name,speed,mileage):
+        self.name = name
+        self.speed =speed
+        self.mileage = mileage
+class Bus(Vehicle):
+    pass
+class Car(Vehicle):
+    pass
+
+Q. Create a Bus child class that inherits from the Vehicle class. The default fare charge of any vehicle is seating capacity * 100. If Vehicle is Bus instance, we need to add an extra 10% on full fare as a maintenance charge. So total fare for bus instance will become the final amount = total fare + 10% of the total fare.
+ans-
+class Vehicle:
+    def __init__(self, name,mileage,capacity):
+        self.name = name
+        self.mileage =mileage
+        self.capacity =capacity
+    def fare(self):
+        return self.capacity * 100
+class Bus(Vehicle):
+    pass
+School_bus = Bus("mercedeis", 12, 50)
+print( School_bus.fare())
+
+Q. Write a program to determine which class a given Bus object belongs to.
+ans-
+class Vehicle:
+    def __init__(self, name, mileage, capacity):
+        self.name = name
+        self.mileage = mileage
+        self.capacity = capacity
+class Bus(Vehicle):
+    pass
+School_bus = Bus("Volvo", 12, 50)
+
+
+===============================================================================================
+#  A mapping of digit to letters is given below: 
+#  2 -> A,B,C 
+# 3 -> D,E,F 
+# 4 -> G,H,I 
+# 5 -> J,K,L 
+# 6 -> M,N,O 
+# 7 -> P,Q,R,S 
+# 8 -> T,U,V 
+# 9 -> W,X,Y,Z 
+
+#  e.g., 
+
+# "2" -> ['A', 'B','C', 'AB', 'AC', 'BC', 'ABC'] 
+# "23" -> ['AD', 'AE', 'AF','BD', 'BE', 'BF','CD', 'CE', 'CF']
+===============================================================================================
+
+===============================================================================================
+
+# # Given two sorted lists A and B, write a function that returns a single sorted list that contains all elements from both A and B. 
+# # You cannot use any libraries or sort methods.
+
+===============================================================================================
+Here is your problem!
+
+Given two lists of time intervals, find the intersection of these two lists. Each list consists of disjoint intervals sorted based on their start time. Please submit your approaches and code to me. :)
+
+
+
+Example 1:
+
+Each tuple is a time interval [t1, t2] where t1 is the start time and t2 is the end time.
+
+Input: arr1=[[1, 3], [5, 6], [7, 9]], arr2=[[2, 3], [5, 7]]
+
+Output: [2, 3], [5, 6], [7, 7]
+
+Explanation: The output list contains the common intervals between the two lists.
+
+
+
+Example 2:
+
+Input: arr1=[[1, 3], [5, 7], [9, 12]], arr2=[[5, 10]]
+
+Output: [5, 7], [9, 10]
+
+Explanation: The output list contains the common intervals between the two lists.
+
+
+==========================================================================================

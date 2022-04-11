@@ -1,10 +1,59 @@
 Q. Create a range of list which is having even numbers upto 100?
+ans-
+start, end = 0, 100
+for num in range(start, end + 1):
+      if num % 2 == 0:
+        print(num, end=" ")
+
 Q. Create a range of list which is having odd numbers upto 100?
+ans-
+start, end = 0,100
+for num in range(start, end + 1):
+    if num % 2 != 0:
+        print(num, end=" ")
+
+
 Q. Create a range of list which is having multiples of 7 upto 100?
+ans-
+def multiples(x):
+    for n in range(100):
+        n = (n*x)
+        if n <= 100:
+            print(n)
+print(multiples(7))
+
+
 Q. a =10, b =20 -- Swap two numbers.
-Q. example given the string "Welcome to the danger zone" should become "zone danger the to Welcome" and not "enoz regnad eht ot emocleW"? 
+ans-
+a=10
+b=20
+res=0
+res=a
+a=b
+b=res
+print(a)
+print(b)
+Q. example given the string "Welcome to the danger zone" should become "zone danger the to Welcome" and not "enoz regnad eht ot emocleW"?
+ans-
+def rev_sentence(sentence):
+    words = sentence.split(' ')
+    reverse_sentence = ' '.join(reversed(words))
+    return reverse_sentence
+if __name__ == "__main__":
+    input = 'Welcome to the danger zone'
+    print(rev_sentence(input))
 Q. You are given a string input, let's say "Hello World!". Your output should be, how many times each character is showing up in the string. So, in this example, it should write:
 	H: 1 e: 1 l: 3 o: 2
+    ans-
+    test_str = "HelloWorld!"
+all_freq = {}
+
+for i in test_str:
+    if i in all_freq:
+        all_freq[i] += 1
+    else:
+        all_freq[i] = 1
+print ( str(all_freq))
 	
 Q. 
 zenPython = '''
@@ -54,28 +103,90 @@ Namespaces are one honking great idea -- let's do more of those!
 '''
 
  Q1. find the count of number of words?
+ ans-
+ test_string = "The Zen of Python, by Tim PetersBeautiful is better than ugly.Explicit is better than implicit.Simple is better than complex.Complex is better than complicated.Flat is better than nested.Sparse is better than dense.Readability counts.Special cases aren't special enough to break the rules.Although practicality beats purity.Errors should never pass silently.Unless explicitly silenced.In the face of ambiguity, refuse the temptation to guess.There should be one-- and preferably only one --obvious way to do it.Although that way may not be obvious at first unless you're Dutch.Now is better than never.Although never is often better than *right* now.If the implementation is hard to explain, it's a bad idea.If the implementation is easy to explain, it may be a good idea.Namespaces are one honking great idea -- let's do more of those!"
+res = len(test_string.split())
+print ("The number of words in string are : " + str(res))
+
  Q2. remove the characters in the words like *, \n, !, - ..etc and find then find the count of words?
+ ans-
+ test_string = "The Zen of Python by Tim PetersBeautiful is better than ugly.Explicit is better than implicit.Simple is better than complex.Complex is better than complicated.Flat is better than nested.Sparse is better than dense.Readability counts.Special cases aren't special enough to break the rules.Although practicality beats purity.Errors should never pass silently.Unless explicitly silenced.In the face of ambiguity, refuse the temptation to guess.There should be one and preferably only one obvious way to do it.Although that way may not be obvious at first unless you're Dutch.Now is better than never.Although never is often better than right now.If the implementation is hard to explain, it's a bad idea.If the implementation is easy to explain, it may be a good idea.Namespaces are one honking great idea let's do more of those"
+res = len(test_string.split())
+print ("The number of words in string are : " + str(res))
+
+ 
  Q3. Convert all words into lower words?
+ ans-
+ test_string = "The Zen of Python by Tim PetersBeautiful is better than ugly.Explicit is better than implicit.Simple is better than complex.Complex is better than complicated.Flat is better than nested.Sparse is better than dense.Readability counts.Special cases aren't special enough to break the rules.Although practicality beats purity.Errors should never pass silently.Unless explicitly silenced.In the face of ambiguity, refuse the temptation to guess.There should be one and preferably only one obvious way to do it.Although that way may not be obvious at first unless you're Dutch.Now is better than never.Although never is often better than right now.If the implementation is hard to explain, it's a bad idea.If the implementation is easy to explain, it may be a good idea.Namespaces are one honking great idea let's do more of those"
+msg = test_string.lower()
+print (msg)
+
+ 
  Q4. generate a dict with word as name and count of that as value?
- 
- 
+ ans-
+ text = open("file.txt.txt", "r")
+d = dict()
+for line in text:
+	words = line.split(" ")
+	for word in words:
+		if word in d:
+			d[word] = d[word] + 1
+		else:
+			d[word] = 1
+for key in list(d.keys()):
+	print(key, ":", d[key])
+
  Q. Convert camel case to snake case and snake case to camle case?
 	# input:  is_valid_number
 	# output: isValidNumber 
 	vice versa.
+    ans-
+    old_str = 'is_valid_number'
+temp = old_str.split('_')
+res = temp[0] + ''.join(ele.title() for ele in temp[1:])
+print( str(res))
 	
 Q. lst = [34,56,34,78,56,23,45,23]
 	checkIfDuplicates(lst) --- >write a function to find the duplicate elements.
+    ans-
+    from collections import Counter
+l1 = [34,56,34,78,56,23,45,23]
+d = Counter(l1)
+new_list = list([item for item in d if d[item]>1])
+print(new_list)
+
+    
 	
 Q. """ Q. ABCDE --- Move 2 positions cyclic (Use Mod to length of string if Cyclic position is greater than length)
     Now result is ---CDEAB
     ABCDE
       CDEAB  
     """
+    ans-
+   str1 = "ABCDE"
+def leftrotate(s, d):
+    tmp = s[d:] + s[0: d]
+    return tmp
+def rightrotate(s, d):
+ return leftrotate(s, len(s) - d)
+print(leftrotate(str1, 2))
+
+
 	Q2. Move 8 positions cyclic.
+    
+    str1 = "ABCDE"
+def leftrotate(s, d):
+    tmp = s[d:] + s[0: d]
+    return tmp
+def rightrotate(s, d):
+ return leftrotate(s, len(s) - d)
+print(leftrotate(str1, 8))
+
 	
 Q. #lst = ['abt','bta','tab','bar','dsksllkd']
 # all words which is having same characters group into one list and written --here we can say "abt" is same as "bta"?
+ANS-
+
 
 Q. print below patterns?
 	#Print the below pattern
@@ -84,6 +195,12 @@ Q. print below patterns?
 	####
 	####
 	####
+    
+    ans-
+    for i in range(0, 4):
+    for j in range(0, 4):
+        print("*", end="")
+    print()
 
 	# 2nd Pattern
 	"""
@@ -92,6 +209,12 @@ Q. print below patterns?
 	***
 	****
 	"""
+    ans-
+    n = 4
+for i in range(1, n+1):
+    for k in range(1, i+1):
+        print("*", end="")
+    print()
  
 	 
 	 #3rd Printing Pattern
@@ -102,6 +225,14 @@ Q. print below patterns?
 	   &&&&
 	  &&&&&   
 	"""
+    ans-
+    size = 5
+for i in range(size):
+    for j in range(1, size - i):
+        print(" ", end="")
+    for k in range(0, i + 1):
+        print("&", end="")
+    print()
 	
 	
 	
@@ -111,14 +242,61 @@ Q. print below patterns?
 	&&
 	&
 	"""
+    ans-
+    n = 4
+for i in range(n):
+    # internal loop run for n - i times
+    for j in range(n - i):
+        print('&', end='')
+    print()
 	
 	
 Q. Reverse the integer using str and also by mathematical operations by using remainder and dividend values? 3425 --- 5243
+ans-
+num = 3425
+rev = 0
+while(num > 0):
+	a = num % 10
+	rev = rev * 10 + a
+	num = num // 10
+print(rev)
+
 Q. Find an element from a string?
+ans-
+
 Q. find program to find the nth prime number?
+ans-
 Q. swap all zeroes to end?
 	lst = [1,0,1,0,0,1,1,0]
+    ans-
+    arr = [1,0,1,0,0,1,1,0]
+def pushZerosToEnd(arr, n):
+    count = 0
+    for i in range(n):
+        if arr[i] != 0:
+            arr[count] = arr[i]
+            count += 1
+    while count < n:
+        arr[count] = 0
+        count += 1
+n = len(arr)
+pushZerosToEnd(arr, n)
+print(arr)
+
+
 Q. Sort a list [34,67,87,23,12,4,89]
+ans-
+list=[34,67,87,23,12,4,89]
+list.sort()
+print(list)
+
 Q. factorial of a number?
+ans-
+num = 5;
+def factorial(n):
+    if n == 0:
+        return 1
+    return n * factorial(n - 1)
+print("Factorial of", num, "is",factorial(num))
 Q. 
 
