@@ -1,0 +1,52 @@
+1.assertion error
+x = 1
+y = 0
+assert y != 0 
+print(x / y)
+-------------------------
+2.attribute error
+X = 29
+X.append(9)
+print(X)
+----------------------
+3.import error
+import rsa
+import request
+-----------------------
+4.index error
+X = [9, 10, 9]
+for i in X:
+	print(X[4])
+-----------------------------
+5.key error
+X= {'Jim': 30, 'Pam': 28, 'Kevin': 33}
+print(X['Michael'])
+------------------------------
+6.name error
+X= ['alok','cricket','movies']
+print(x)
+-------------------------------
+7.not implemented error
+class BaseClass(object):
+    def __init__(self):
+        super(BaseClass, self).__init__()
+    def do_something(self):
+        raise NotImplementedError(self.__class__.__name__ + '.try_something')
+
+BaseClass().do_something() 
+-----------------------------------
+8.Indentation Error
+X= ['alok','cricket','movies']
+   print(X)
+------------------------------
+9.syntax error
+X= ['alok','cricket','movies']
+print(X):
+-------------------------------
+10.zero division error
+a = 8
+b = 0
+c = a / b
+print (c)
+----------------------------
+11.
