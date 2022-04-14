@@ -1,0 +1,49 @@
+1.kept it in hint.txt file
+---------------------------------
+2.to read the file
+file = open('hint.txt', 'r')
+print(file.read())
+-------------------------
+3.read line by line
+file = open('hint.txt', 'r')
+Lines = file.readlines()
+count = 0
+for line in Lines:
+    count += 1
+    print("Line{}: {}".format(count, line.strip()))
+------------------------------------
+4.counting the number of words
+hint="The Zen of Python, by Tim PetersBeautiful is better than ugly.Explicit is better than implicit.Simple is better than complex.Complex is better than complicated.Flat is better than nested.Sparse is better than dense.Readability counts.Special cases aren't special enough to break the rules.Although practicality beats purity.Errors should never pass silently.Unless explicitly silenced.In the face of ambiguity, refuse the temptation to guess.There should be one-- and preferably only one --obvious way to do it.Although that way may not be obvious at first unless you're Dutch.Now is better than never.Although never is often better than *right* now.If the implementation is hard to explain, it's a bad idea.If the implementation is easy to explain, it may be a good idea.Namespaces are one honking great idea -- let's do more of those!"
+res = len(hint.split())
+print ("The number of words in string are : " + str(res))
+---------------------------------------------
+5.unique words
+text_file = open('hint.txt', 'r')
+text = text_file.read()
+text = text.lower()
+words = text.split()
+words = [word.strip('.,!;()[]') for word in words]
+words = [word.replace("'s", '') for word in words]
+
+unique = []
+for word in words:
+    if word not in unique:
+        unique.append(word)
+
+unique.sort()
+
+print(unique
+-------------------------------------------
+6.word as key and word count as value
+text = open("hint.txt", "r")
+d = dict()
+for line in text:
+	words = line.split(" ")
+	for word in words:
+		if word in d:
+			d[word] = d[word] + 1
+		else:
+			d[word] = 1
+for key in list(d.keys()):
+	print(key, ":", d[key])
+-------------------------------------------------------

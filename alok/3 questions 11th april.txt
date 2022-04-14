@@ -1,0 +1,17 @@
+fabbonic series of 1st 10 using generator
+a = int(10)
+def fib(n):
+    a=0
+    b =1
+    for i in range(n):
+        yield a
+        a=b
+        b =a + b
+print (list(fib(a)))
+
+-----------------------------------
+diffrence in between itearator and generator?
+
+1.Iterator are objects which uses next() method to get next value of sequence. Generators: A generator is a function that produces or yields a sequence of values using yield method.
+2.A generator in python makes use of the ‘yield’ keyword. A python iterator doesn’t.
+3.we can implement your own iterator using a python class; a generator does not need a class in python.

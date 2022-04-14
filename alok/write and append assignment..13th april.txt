@@ -1,0 +1,9 @@
+text_file =['alok']
+text_file.append('cricket')
+print(text_file)
+
+
+text_file = open("hint.txt", "w")
+text_file.write('srabani')
+text_file.close()
+print(text_file)
