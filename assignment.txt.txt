@@ -1,0 +1,70 @@
+text_file =['alok','kalyani']
+text_file.append('ashrita')
+print(text_file)
+
+
+text_file = open("data.txt", "w")
+text_file.write('kalyani')
+print(text_file)
+
+
+Total no. of words:
+
+file = open('file.txt', 'r')
+read_data = file.read()
+per_word = read_data.split()
+print('Total Words:', len(per_word))
+
+Read line by line:
+
+file = open('file.txt', 'r')
+Lines = file.readlines()
+count = 0
+for line in Lines:
+    count += 1
+    print("Line{}: {}".format(count, line.strip()))
+
+word as key and count as a value:
+
+text = open("file.txt", "r")
+d = dict()
+for line in text:
+    line = line.strip()
+    line = line.lower()
+    words = line.split(" ")
+    for word in words:
+        if word in d:
+            d[word] = d[word] + 1
+        else:
+            d[word] = 1
+for key in list(d.keys()):
+    print(key, ":", d[key])
+
+number of unique words:
+
+
+text_file = open('file.txt', 'r')
+text = text_file.read()
+text = text.lower()
+words = text.split()
+words = [word.strip('.,!;()[]') for word in words]
+words = [word.replace("'s", '') for word in words]
+
+unique = []
+for word in words:
+    if word not in unique:
+        unique.append(word)
+
+unique.sort()
+
+print(unique)
+
+
+remove extra content:
+
+
+string = input('Enter any string: ')
+special_char = '@_!#$%^&*()<>?/\|}{~:;[]'
+for i in special_char:
+    string = string.replace(i, '')
+print('New string:', string)
